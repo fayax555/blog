@@ -11,23 +11,26 @@ export default function ArticlesPage() {
     <AdminLayout title='Articles' addBtn>
       <table>
         <thead className='border-b-[1px] text-sm text-slate-600'>
-          <tr>
-            <th className='py-2 font-light'>ID</th>
-            <th className='font-light'>Title</th>
-            <th className='font-light'>Author</th>
-            <th className='font-light'>Category</th>
-            <th className='font-light'>Status</th>
-            <th className='font-light'>Action</th>
+          <tr className='[&>*]:px-5 [&>*]:text-left [&>*]:font-light'>
+            <th className='py-2'>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Action</th>
           </tr>
         </thead>
 
         <tbody className='translate-y-4 text-slate-700'>
           {articles?.map(({ id, author, title, category, status }) => (
-            <tr className='rounded-md pt-5 hover:bg-slate-100' key={id}>
-              <td className='rounded-l-md px-5 py-4 font-semibold'>{id}</td>
-              <td className='px-5 py-4 font-semibold'>{title}</td>
-              <td className='px-5'>{author}</td>
-              <td className='px-5'>{category}</td>
+            <tr
+              className='rounded-md pt-5 hover:bg-slate-100 [&>*]:px-5'
+              key={id}
+            >
+              <td className='rounded-l-md py-4 font-semibold'>{id}</td>
+              <td className='py-4 font-semibold'>{title}</td>
+              <td>{author}</td>
+              <td>{category}</td>
               <td>
                 <div
                   title={status}
@@ -36,7 +39,7 @@ export default function ArticlesPage() {
                   }`}
                 ></div>
               </td>
-              <td className='rounded-r-md px-5'>
+              <td className='rounded-r-md'>
                 <div className='flex items-center gap-4'>
                   <button type='button' title='edit article'>
                     <AiFillEdit className='text-xl text-slate-600 transition hover:text-blue-600' />

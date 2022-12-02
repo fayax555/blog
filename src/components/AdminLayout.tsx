@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link
               className={`${
                 active === item.toLowerCase()
-                  ? 'bg-slate-300'
+                  ? 'bg-slate-200'
                   : 'hover:bg-slate-200'
               } block w-full rounded-md py-2 px-4 `}
               href={`/admin/${item.toLowerCase()}`}

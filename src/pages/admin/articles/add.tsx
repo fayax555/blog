@@ -1,12 +1,10 @@
 import AdminLayout from 'components/AdminLayout'
-import { articles } from 'data'
+import { t } from 'utils/trpc'
 
-const authors = [...new Set(articles.map((a) => a.author))]
-const categories = [...new Set(articles.map((a) => a.category))]
 const statuses = ['Draft', 'Published']
 
 type Label = 'Author' | 'Category' | 'Status'
-type DropdownProps = { items: string[]; label: Label }
+type DropdownProps = { items: string[] | undefined; label: Label }
 const Dropdown = ({ items, label }: DropdownProps) => (
   <div className='mb-6 flex items-center gap-4'>
     <label htmlFor={label} className='block w-24'>
@@ -16,7 +14,7 @@ const Dropdown = ({ items, label }: DropdownProps) => (
       id={label}
       className='w-[200px] cursor-pointer rounded-md border-r-[12px] bg-slate-200 px-4 py-2 font-semibold'
     >
-      {items.map((item) => (
+      {items?.map((item) => (
         <option key={item} value={item}>
           {item}
         </option>
@@ -26,6 +24,12 @@ const Dropdown = ({ items, label }: DropdownProps) => (
 )
 
 export default function AddArticlePage() {
+  const authorRes = t.author.getAll.useQuery()
+  const categoryRes = t.category.getAll.useQuery()
+  
+  const authors = authorRes.data?.map((a) => a.name)
+  const categories = categoryRes.data?.map((c) => c.name)
+
   return (
     <AdminLayout title='Add Article'>
       <form className='px-5'>
