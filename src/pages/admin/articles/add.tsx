@@ -56,9 +56,10 @@ export default function AddArticlePage() {
           id='body'
           className='block min-h-[300px] w-full rounded-md border-2 border-slate-500 p-4 text-lg'
         ></textarea>
+
         <button
           type='submit'
-          className='mt-8 block w-full rounded-md bg-blue-200 px-4 py-2 text-lg font-semibold text-blue-900 transition hover:bg-blue-300'
+          className='mt-8 block w-[200px] rounded-md bg-slate-800 px-4 py-2 text-lg font-semibold text-slate-200 transition hover:bg-slate-600'
         >
           Add Article
         </button>
