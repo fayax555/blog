@@ -18,7 +18,7 @@ model Example {
 
 model User {
   id        String    @id @default(cuid())
-  name      String?
+  name      String
   articles  Article[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
@@ -37,11 +37,10 @@ model Article {
   title      String
   body       String
   status     String
-  category   String
   author     User     @relation(fields: [authorId], references: [id])
   authorId   String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
   categoryId Int
-  Category   Category @relation(fields: [categoryId], references: [id])
+  category   Category @relation(fields: [categoryId], references: [id])
 }

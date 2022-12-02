@@ -1,10 +1,10 @@
 import { type AppType } from "next/app";
-
-import { trpc } from "../utils/trpc";
-
-import "../styles/globals.css";
-
 import { Nunito } from "@next/font/google";
+
+import { t } from "utils/trpc";
+
+import "styles/globals.css";
+
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -19,4 +19,4 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   );
 };
 
-export default trpc.withTRPC(MyApp);
+export default t.withTRPC(MyApp);

@@ -37,7 +37,7 @@ type Props = { children: ReactNode; title: string; addBtn?: boolean }
 
 export default function AdminLayout({ children, title, addBtn }: Props) {
   return (
-    <div className='mx-auto grid max-w-[1050px] grid-cols-[200px_auto] gap-4 p-5'>
+    <div className='mx-auto grid max-w-[1200px] grid-cols-[200px_auto] gap-4 p-5'>
       <Head>
         <title>{`Admin ${title}`}</title>
       </Head>

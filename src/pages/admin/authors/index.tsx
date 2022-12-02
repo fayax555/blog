@@ -18,7 +18,6 @@ export default function Authors() {
             <th className='font-light'>Action</th>
           </tr>
         </thead>
-
         <tbody className='translate-y-4 text-slate-700'>
           {authors.map(([id, name]) => (
             <tr key={id} className='rounded-md pt-5 hover:bg-slate-100'>
