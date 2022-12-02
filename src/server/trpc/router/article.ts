@@ -1,3 +1,4 @@
+import { AddArticleSchema } from 'schema'
 import { z } from 'zod'
 
 import { router, publicProcedure } from '../trpc'
@@ -22,4 +23,10 @@ export const articleRouter = router({
       status: a.status as 'Draft' | 'Published',
     }))
   }),
+
+  add: publicProcedure
+    .input(AddArticleSchema)
+    .mutation(async ({ ctx: { prisma }, input }) => {
+      await prisma.article.create({ data: input })
+    }),
 })

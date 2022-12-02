@@ -35,7 +35,7 @@ model Category {
 model Article {
   id         Int      @id @default(autoincrement())
   title      String
-  body       String
+  content    String
   status     String
   author     User     @relation(fields: [authorId], references: [id])
   authorId   String
