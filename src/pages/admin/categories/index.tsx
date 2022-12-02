@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Categories() {
   return (
-    <AdminLayout title="Categories" header>
+    <AdminLayout title="Categories" addBtn>
       <div></div>
     </AdminLayout>
   );
