@@ -9,12 +9,28 @@ export default function AddArticlePage() {
     <AdminLayout title='Add Article'>
       <form className='px-5'>
         <div className='mb-6 flex items-center gap-4'>
+          <label htmlFor='status' className='block w-24'>
+            Status
+          </label>
+          <select
+            id='status'
+            className='w-[200px] cursor-pointer rounded-md border-r-[12px] bg-slate-200 px-4 py-2 font-semibold'
+          >
+            {['Draft', 'Published'].map((a) => (
+              <option key={a} value={a}>
+                {a}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className='mb-6 flex items-center gap-4'>
           <label htmlFor='author' className='block w-24'>
             Author
           </label>
           <select
             id='author'
-            className='w-[200px] rounded-md border-r-[12px] bg-slate-200 px-4 py-2 font-semibold'
+            className='w-[200px] cursor-pointer rounded-md border-r-[12px] bg-slate-200 px-4 py-2 font-semibold'
           >
             {authors.map((a) => (
               <option key={a} value={a}>
@@ -30,7 +46,7 @@ export default function AddArticlePage() {
           </label>
           <select
             id='category'
-            className='w-[200px] rounded-md border-r-[12px] bg-slate-200 px-4 py-2 font-semibold'
+            className='w-[200px] cursor-pointer rounded-md border-r-[12px] bg-slate-200 px-4 py-2 font-semibold'
           >
             {categories.map((c) => (
               <option key={c} value={c}>
