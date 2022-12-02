@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Authors() {
   return (
-    <AdminLayout title="Authors">
+    <AdminLayout title="Authors" header>
       <div></div>
     </AdminLayout>
   );
